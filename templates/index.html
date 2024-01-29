@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        .all{
+            margin-top: 15%;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+    <h1>Weather</h1>
+    
+    <form method="POST" action="/">
+        <label for="city">Enter city name:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if weather_info %}
+        <h2>Weather condition for {{ weather_info.city }}:</h2>
+        <p>Temperature: {{ weather_info.temperature }}°C</p>
+        <p>Description: {{ weather_info.description }}</p>
+        <p>Humidity: {{ weather_info.humidity }}%</p>
+        <p>Wind Speed: {{ weather_info.wind_speed }} m/s</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+</div>
+</body>
+</html>
