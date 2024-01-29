@@ -23,7 +23,7 @@ def index():
 
     if request.method == 'POST':
         city = request.form.get('city')
-        api_key = '6fbaac4bb71257547902ada6cc55d38a'
+        api_key = 'Use_Your_API_Key'
 
         try:
             weather_info = get_weather(api_key, city)
